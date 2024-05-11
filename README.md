@@ -1,5 +1,5 @@
-Download the folder by cloning
+1)Download the folder by cloning
 
-Copy paste the text in requirements.txt in your command prompt.
+2)Copy paste the text in requirements.txt in your command prompt.
 
-Now you can run the python scripts 
+3)Now you can run the python scripts 
