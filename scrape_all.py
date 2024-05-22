@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
+import time
 
 def scrape_amazon(item):
     # Set up Selenium
@@ -22,6 +23,7 @@ def scrape_amazon(item):
 
     # Press Enter to perform the search
     search_input.send_keys(Keys.ENTER)
+    time.sleep(3)
 
     # Find elements containing product names, prices, and ratings
     product_elements = driver.find_elements(By.XPATH, "//div[@data-component-type='s-search-result']")
@@ -30,7 +32,7 @@ def scrape_amazon(item):
     names = []
     prices = []
     ratings = []
-    
+
     # Extract product information
     for product_element in product_elements:
         # Extract product name
@@ -87,6 +89,7 @@ def scrape_flipkart(item):
 
     # Press Enter to perform the search
     search_input.send_keys(Keys.ENTER)
+    time.sleep(3)
 
     # Find elements containing product names, prices, and ratings
     product_elements = driver.find_elements(By.XPATH, "//div[@class='tUxRFH']")

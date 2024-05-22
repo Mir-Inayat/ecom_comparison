@@ -1,3 +1,4 @@
 from scrape_all import scrape_amazon
 
-print(scrape_amazon("mobile"))
+s=input("What do you want to compare: ")
+print(scrape_amazon(s))
