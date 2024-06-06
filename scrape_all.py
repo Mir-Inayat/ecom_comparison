@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
-import time
 
 def scrape_amazon(item):
     # Set up Selenium
@@ -23,11 +22,10 @@ def scrape_amazon(item):
 
     # Press Enter to perform the search
     search_input.send_keys(Keys.ENTER)
-    time.sleep(3)
 
     # Find elements containing product names, prices, and ratings
     product_elements = driver.find_elements(By.XPATH, "//div[@data-component-type='s-search-result']")
-    
+
     # Initialize lists to store data
     names = []
     prices = []
@@ -39,15 +37,15 @@ def scrape_amazon(item):
         product_name_element = product_element.find_element(By.XPATH, ".//span[@class='a-size-medium a-color-base a-text-normal']")
         product_name = product_name_element.text
         names.append(product_name)
-        
+
         # Extract product price
         try:
             product_price_element = product_element.find_element(By.XPATH, ".//span[@class='a-price-whole']")
             product_price = product_price_element.text
         except:
-            product_price = "Price not available"
+            product_price = "0"
         prices.append(float(product_price.replace(',', '')))
-        
+
         # Extract product rating
         try:
             product_rating_element = product_element.find_element(By.XPATH, ".//span[@class='a-icon-alt']")
@@ -89,7 +87,6 @@ def scrape_flipkart(item):
 
     # Press Enter to perform the search
     search_input.send_keys(Keys.ENTER)
-    time.sleep(3)
 
     # Find elements containing product names, prices, and ratings
     product_elements = driver.find_elements(By.XPATH, "//div[@class='tUxRFH']")
@@ -140,5 +137,3 @@ def main():
     print(flipkart_df)
 if __name__=="__main__":
     main()
-
-
