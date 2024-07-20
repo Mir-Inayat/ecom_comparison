@@ -25,7 +25,7 @@ Automated data collection and analysis are crucial in today's data-driven world.
     - Allows users to input URLs for the data extraction and view results within the application.
 
 ## File Descriptions
-- `main.py`: The main script that initializes the application and handles user interactions.
+- `pyqttrial.py`: The main script that initializes the application and handles user interactions.
 - `scraper.py`: Contains the web scraping logic using Selenium. Includes functions for extracting data from Amazon, Flipkart, and YouTube.
 - `visualizer.py`: Handles data visualization using Matplotlib. Includes functions for creating different types of charts and graphs.
 - `ui_main.py`: Defines the PyQt5 user interface layout and components.
